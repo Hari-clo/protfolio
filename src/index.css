@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #0B0D0F;
+    color: #F4F5F7;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    letter-spacing: -0.01em;
+    overflow-x: hidden;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0B0D0F;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #232830;
+    border-radius: 4px;
+    border: 2px solid #0B0D0F;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #343B47;
+  }
+
+  /* Selection highlight */
+  ::selection {
+    background-color: rgba(56, 189, 248, 0.25);
+    color: #FFFFFF;
+  }
+}
+
+/* Subtle editorial paper / technical grid texture */
+.editorial-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+.subtle-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Fine border utility */
+.border-hairline {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+.border-hairline-bright {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+/* Respect reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
